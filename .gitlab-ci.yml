@@ -1,6 +1,7 @@
 image : python:3.7
 stages:
     - build
+    - test
 
 
 
@@ -9,3 +10,8 @@ build:
     script :
         - pip install -r src/requirements.txt
         - echo "build complete :D" 
+
+test:
+    stage : test 
+    script : 
+        - python manage.py test
